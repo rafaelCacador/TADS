@@ -1,8 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+</head>
+<body>
+    <p>O nome é <?php $_POST["nome"]?> </p>
+    <p>O estado civil é <?php $_POST["nome"]?> </p>
+    <p>O estado é <?php $_POST["nome"]?> </p>
+    <p>Os extras são:
 <?php 
+    foreach ($POST["extras"] as $extra): 
+?> 
+
+<?= $extra ?> <br>
+
+<?php 
+    endforeach;
+?> 
+    </p>
     
-    echo "O nome digitado foi de: {$_GET["nome"]} {$_GET["sobrenome"]} ";
-    //se fosse enviado em post seria $_POST
-    //$_REQUEST
-
-
-?>
+    <?php
+    var_dump($_POST)
+    ?>
+</body>
+</html>
