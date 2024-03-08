@@ -7,9 +7,9 @@
 </head>
 <body>
     <p>O nome é <?php $_POST["nome"]?> </p>
-    <p>O estado civil é <?php $_POST["nome"]?> </p>
-    <p>O estado é <?php $_POST["nome"]?> </p>
-    <p>Os extras são:
+    <p>O estado civil é <?php $_POST["estCivil"]?> </p>
+    <p>O estado é <?php $_POST["selEstado"]?> </p>
+    <p>Os extras são: <br>
 <?php 
     foreach ($POST["extras"] as $extra): 
 ?> 
@@ -21,6 +21,8 @@
 ?> 
     </p>
     
+    <p>O userId é: <?= $_GET["id"] ?> </p> <!-- via GET e os outros via POST -->
+
     <?php
     var_dump($_POST)
     ?>
