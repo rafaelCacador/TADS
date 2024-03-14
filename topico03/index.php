@@ -8,15 +8,25 @@ require_once("c.php"); //evita redeclaração
 include("b.php");
 include_once("a.php") //só é incluido uma vez, não dá erro assim. Útil em classes
 
-//----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
 require_once("UsuarioSessao.php");  //importa
+require_once("UsuarioSessaoPermissao.php"); //SEMPRE usar o require ONCE
+require_once("Funcionario.php");
 
-$usu1 = new UsuarioSessao();
+$usu1 = new UsuarioSessao("Juquinha", null);
 
-$usu1->$nome = "Juquinha"; // -> é equivalente ao . 
-$usu1->$login = "juca";
+$usuP = new UsuarioSessaoPermissao("Juca","Juquinha",10);
 
-$usu1->salvar()
-$usu1->ler()
+$usuP->ler(); //UsuarioSessaoPermissao
 
-var_dump($usu1);
+$func = new Funcionario(1234,"Rafael",1243);
+
+var_dump($func);
+
+// $usu1->$nome = "Juquinha"; // -> é equivalente ao . 
+// $usu1->$login = "juca";
+// $usu1->salvar();
+// $usu1->ler();
+
+// var_dump($usu1);
