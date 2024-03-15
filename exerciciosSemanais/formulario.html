@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Formulário de Cadastro</h2>
+    <form action="processaFormulario.php" method="POST">
+
+        <label for="nome">Nome:</label><br>
+        <input type="text" name="nome" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label for="endereco">Endereço:</label><br>
+        <input type="text" name="endereco"><br><br>
+
+        <label for="profissao">Profissão:</label><br>
+        <select name="profissao" required>
+            
+            <option value="Engenheiro de Software">Engenheiro de Software</option>
+            <option value="Analista de Segurança de Informação">Analista de Segurança de Informação</option>
+            <option value="Analista de Sistemas">Analista de Sistemas</option>
+            <option value="Administrador de Sistemas">Administrador de Sistemas</option>
+            <option value="Administrador do banco de dados (DBA)">Administrador do banco de dados (DBA)</option>
+            <option value="Gestor de tecnologias da informação">Gestor de tecnologias da informação</option>
+            <option value="Arquiteto de redes">Arquiteto de redes</option>
+            <option value="Desenvolvedor">Desenvolvedor</option>
+
+        </select><br><br>
+
+        <label>Gênero:</label><br>
+        <input type="radio" name="genero" value="Feminino"> Feminino
+
+        <input type="radio" name="genero" value="Masculino"> Masculino
+    
+        <input type="radio" name="genero" value="Prefiro não informar"> Prefiro não informar
+        <br>
+        <input type="text" name="genero" value="Outro"> 
+
+        <br><br>
+
+        <label for="area_interesse">Área de Interesse:</label><br>
+
+        <input type="checkbox" id="banco_dados" name="area_interesse[]" value="Banco de dados">
+        <label for="banco_dados">Banco de dados</label><br>
+
+        <input type="checkbox" id="engenharia_software" name="area_interesse[]" value="Engenharia de software">
+        <label for="engenharia_software">Engenharia de software</label><br>
+
+
+        <input type="checkbox" id="redes" name="area_interesse[]" value="Redes de computadores">
+        <label for="redes">Redes de computadores</label><br>
+
+        <input type="checkbox" id="desenvolvimento_jogos" name="area_interesse[]" value="Desenvolvimento de jogos">
+        <label for="desenvolvimento_jogos">Desenvolvimento de jogos</label><br>
+
+        <input type="checkbox" id="programacao_backend" name="area_interesse[]" value="Programação back-end">
+        <label for="programacao_backend">Programação back-end</label><br>
+
+        <input type="checkbox" id="programacao_frontend" name="area_interesse[]" value="Programação front-end">
+        <label for="programacao_frontend">Programação front-end</label><br>
+
+        <input type="checkbox" id="mineracao_dados" name="area_interesse[]" value="Mineração de dados">
+        <label for="mineracao_dados">Mineração de dados</label><br><br>
+
+        <label for="fale_conosco">Fale conosco:</label><br>
+        <textarea id="fale_conosco" name="fale_conosco"></textarea><br><br>
+
+        <input type="checkbox" id="promocoes" name="promocoes" value="sim">
+        <label for="promocoes">Deseja receber nossas promoções?</label><br><br>
+
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha" name="senha" required><br><br>
+
+        <label for="confirmar_senha">Confirmação da senha:</label><br>
+        <input type="password" id="confirmar_senha" name="confirmar_senha" required><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
