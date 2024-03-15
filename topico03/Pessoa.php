@@ -10,4 +10,14 @@
         $this->salario = $salario;
     }
 
+    //Funcionario é obrigado a implementar
+    abstract public setSalario(float $salario);
+    abstract public getSalario(): float;
+    abstract public setNome(string $nome);
+    abstract public getNome(): string; //abstrato não tem implementação
+
+    public function imprimeNome(){
+        echo "<p> {$this->nome} </p>";
+    }
+
 }

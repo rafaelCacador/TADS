@@ -8,18 +8,39 @@
 
         public function __construct(string $nome,float $salario, int $matricula){ 
 
-            parent::__construct(string $nome,float $salario);
+            parent:: __construct($nome,$salario);
             $this->matricula = $matricula; 
 
         }
-        public function getSalario(): float{
-            return $this->salario
+
+        public function __destruct(){
+            echo "Destruindo o objeto {$this->nome}";
         }
 
-        public function setSalario(): (float $valor){
+        public function getSalario(): float{
+            return $this->salario;
+        }
+
+        public function setSalario(float $valor){
             if($valor >= 1000){
                 $this->salario = $valor;
             }
         }
+
+        function setNome(string $nome){
+            $this->nome = $nome;
+        }
+
+        function getNome(): string{
+            return $this->nome = $nome;
+        }
+        
+        function imprime(){
+            echo "<p> {$this->nome} </p>";
+            echo "<p> {$this->salario} </p>";
+            echo "<p> {$this->matricula} </p>";
+        }
+
+    
         
     }
