@@ -45,7 +45,7 @@
 
     for($i = 0; $i <= 20; $i++){
         ;
-        echo "O quadrado de $i é ".$i*$i "<br";
+        echo "O quadrado de $i é ".$i*$i;
 
     }
 
