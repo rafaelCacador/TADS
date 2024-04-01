@@ -1,8 +1,12 @@
 <?php
 
 namespace Vendas;
+spl_autoload_register(function ($classe){ 
+    require_once str_replace('\\','/', $classe,'.php');
 
+ });
 require_once "Produto.php";
+
 
 class Cesta {
     private $itens = [];
@@ -26,7 +30,5 @@ class Cesta {
     }
 }
 
-spl_autoload_register(function ($class) {
-    $class = str_replace('\\', '/', $class);
-    require_once __DIR__ . "/$class.php";
-});
+
+
