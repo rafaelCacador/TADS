@@ -1,48 +1,33 @@
 <?php
 
-    class Database{
+class Database {
 
-        static $db = null;
+    private static $db = null;
 
-        public function __construct() {
-        
-            if (self::$db == null){
-                self::$db = new mysqli('mariadb','root','root','tads');
-        
-                if ( self::$db->connect_errno > 0){
-                    die("Ocorreu um erro { self::$db->connect_errno}");
-                }
+    public function __construct(mysqli $db) {
+        self::$db = $db;
+    }
+
+    public static function connect($host, $username, $password, $database) {
+        if (self::$db === null) {
+            self::$db = new mysqli($host, $username, $password, $database);
+
+            if (self::$db->connect_errno > 0) {
+                throw new Exception("Failed to connect to database: " . self::$db->connect_error);
             }
-        
         }
-    
-       function getConnection(){
-            return self::$db;
+    }
+
+    public static function getConnection() {
+        if (self::$db === null) {
+            throw new Exception("Database connection has not been established.");
         }
-        function closeConnection(){
+        return self::$db;
+    }
+
+    public static function closeConnection() {
+        if (self::$db !== null) {
             self::$db->close();
         }
-
+    }
 }
-
-
-    //localhost:8081
-
-    //$db = new mysqli('mariadb', 'root', 'root', 'tads');  
-
-    //$query = 'SELECT * FROM tads.alunos';
-
-    //$result = $db->query($query);
-
-    //while($linha = $result->fetch_assoc()){ //pega os resultados pelo array associativo
-    //    echo "<p> {$linha["id"]} {$linha["matricula"]} {$linha["nome"]} </p>";
-    //}
-
-    //var_dump($db);
-
-    //$db->close();
- 
-
-   
-
-
