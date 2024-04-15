@@ -1,11 +1,11 @@
 <?php
 
 class RecadoDAO{
-    private $id;
-    private $nome;
-    private $email;
-    private $cidade;
-    private $texto;
+    public $id;
+    public $nome;
+    public $email;
+    public $cidade;
+    public $texto;
 
     //adiciona ao sql antes de chamar o construtor, por isso não implementa agora
 
@@ -17,7 +17,11 @@ class RecadoDAO{
                 <td>{$this->cidade}</td>\n
                 <td>{$this->texto}</td>\n
                 <td><a href=\"index.php?excluir={$this->id}\"</a></td> 
+                <td><a href=\"index.php?alterar={$this->id}\"</a></td> 
             </tr> 
         ";
     }
+    
+
+
 }

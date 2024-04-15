@@ -24,6 +24,7 @@ $con = $db->getConnection();
     <div class="recados">
 <?php 
     require "recados.php";
+    require "buscar.php";
 ?>        
     </div>
 </body>
